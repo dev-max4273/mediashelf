@@ -24,6 +24,9 @@ class MediaItem:
         self.genres = {g.strip().lower() for g in genres}
         self.date_added = date.today().isoformat()
 
+    def __str__(self):
+        return f"{self.title} ({self.year})"
+
 class Book(MediaItem):
     """A book in the library"""
     def __init__(self, title, year, author, pages, rating=None, status="to-do",genres=None):
