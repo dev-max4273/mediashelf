@@ -24,3 +24,6 @@ class InvalidStatusError(MediaShelfError):
 class StorageError(MediaShelfError):
     """A file can't be read or written, or the JSON is corrupted"""
     pass
+
+class InvalidYearError(MediaShelfError):
+    """Raised when a year is outside the allowed range"""
