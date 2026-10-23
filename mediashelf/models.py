@@ -22,3 +22,17 @@ class Book(MediaItem):
         super().__init__(title, year, rating, status)
         self.pages = pages
         self.author = author
+
+class Movie(MediaItem):
+    """A movie In the library"""
+    def __init__(self, title, year, director, runtime_minutes, rating=None, status="to-do"):
+        super().__init__(title, year, rating, status)
+        self.director = director
+        self.runtime_minutes = runtime_minutes
+
+class Album(MediaItem):
+    """An album in the library"""
+    def __init__(self, title, year,  artist, tracks, rating=None, status="to-do"):
+        super().__init__(title, year, rating, status)
+        self.artist = artist
+        self.tracks = tracks
