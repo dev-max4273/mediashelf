@@ -15,3 +15,10 @@ class MediaItem:
         if status not in VALID_STATUSES:
             raise InvalidStatusError("Status must be one of: to-do, in-progress, finished!")
         self.status = status
+
+class Book(MediaItem):
+    """A book in the library"""
+    def __init__(self, title, year, author, pages, rating=None, status="to-do"):
+        super().__init__(title, year, rating, status)
+        self.pages = pages
+        self.author = author
