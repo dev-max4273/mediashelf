@@ -1,4 +1,5 @@
 """Domain models: MediaItem and subclasses"""
+from datetime import date
 VALID_STATUSES = ("to-do","in-progress","finished")
 from mediashelf.exceptions import InvalidRatingError
 from mediashelf.exceptions import InvalidStatusError
@@ -18,6 +19,7 @@ class MediaItem:
         if genres is None:
             genres = []
         self.genres = {g.strip().lower() for g in genres}
+        self.date_added = date.today().isoformat()
 
 class Book(MediaItem):
     """A book in the library"""
